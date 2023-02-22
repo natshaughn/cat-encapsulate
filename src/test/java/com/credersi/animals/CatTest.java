@@ -71,13 +71,16 @@ public class CatTest {
 		assertTrue(cat.isAlive());
 	}
 	@Test
-	public void testRunFuncTwentytimes() {
+	public void testRunFuncTillDeath() {
 		Cat cat = new Cat();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 18; i++) {
 			cat.runs();
 		}
 		assertTrue(!cat.isAlive());
+		assertEquals(cat.howHungry(), 110);
+		
 	}
+	// Cat dies on 18, hunger 110, but cannot run anymore as hunger doesn't change
 	@Test public void testRunFuncTenTimes() {
 		Cat cat = new Cat();
 		for (int i = 0; i < 10; i++) {
@@ -85,4 +88,5 @@ public class CatTest {
 		}
 		assertTrue(cat.isAlive());
 	}
+
 }
